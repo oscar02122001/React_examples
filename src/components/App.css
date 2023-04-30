@@ -1,0 +1,18 @@
+
+.App {
+  display: flex;
+  justify-content: space-between;
+}
+.mn{
+  padding: 20px;
+  border:  1px solid;
+}
+
+table{
+  width: 600px;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+}

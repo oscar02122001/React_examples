@@ -5,7 +5,7 @@ import Hooks from "../components/useEffect/Hooks";
 import Count from "../components/useState, useReducer/count";
 import Index from "../components/useRef";
 import Slider from "../components/slider/slider";
-
+import Navbar from "../components/routerDom5";
 export default function Root() {
   return (
     <div>
@@ -15,6 +15,7 @@ export default function Root() {
       <Render />
       <Index />
       <Slider />
+      <Navbar />
     </div>
   );
 }

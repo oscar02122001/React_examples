@@ -14,6 +14,8 @@ import Contact from "../components/routerDom5/Contact";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 export default function Root() {
 const history = useHistory()
+
+ 
   return (
     <div>
       <App />

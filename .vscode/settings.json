@@ -1,0 +1,7 @@
+{
+  "zenMode.hideActivityBar": false,
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.suggest.showStatusBar": true,
+  "workbench.statusBar.visible": true
+}

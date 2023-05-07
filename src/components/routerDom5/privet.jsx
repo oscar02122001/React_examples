@@ -1,8 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-export default function Privet({ children }) {
-  const navigate = useNavigate();
+const Privet = ({ children }) => {
   const token = JSON.parse(localStorage.getItem("token"));
-  return <div>{token ? children : navigate("/contact")}</div>;
+  return <div>{token ? children : <Navigate to={"/contact"} />}</div>;
 }
+
+export default Privet;

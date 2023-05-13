@@ -6,8 +6,16 @@ import Count from "../components/useState, useReducer/count";
 import Index from "../components/useRef";
 import Slider from "../components/slider/slider";
 import Navbar from "../components/routerDom5/Navbar/index";
+import React18V from "../components/react 18v";
 import { navbar } from "../components/routerDom5/navbar";
 import { Route, Routes } from "react-router-dom";
+import React from "react";
+// const navbar = React.lazy(() => import("../components/routerDom5/navbar"));
+// import Home from "../components/routerDom5/Home";
+// import About from "../components/routerDom5/About";
+
+// const Home = React.lazy(() => import("../components/routerDom5/Home"));
+// const About = React.lazy(() => import("../components/routerDom5/About"));
 
 export default function Root() {
   return (
@@ -22,13 +30,27 @@ export default function Root() {
 
       <Routes>
         <Route element={<Navbar />}>
-          {navbar.map((item) => {
+        {navbar.map((item) => {
             return <Route path={item.path} element={item.element} />;
           })}
-          {/* <Route path={"/"} element={<Navigate to={"/home"} />}></Route>
-          <Route path={"/home"} element={<Home />} />
-          <Route path={"/about"} element={<About />} />
-          <Route path={"/service"} element={<Services />} />
+
+        {/* <Route path={"/"} element={<Navigate to={"/home"} />}></Route> */}
+        {/* <Route
+          path={"/home"}
+          element={
+            <React.Suspense fallback={<h1>Loading...</h1>}>
+              <Home />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path={"/about"}
+          element={
+            <React.Suspense fallback={<h1>Loading...</h1>}>
+              <About />
+            </React.Suspense> */}
+          
+        {/* <Route path={"/service"} element={<Services />} />
           <Route
             path={"/locetion"}
             element={
@@ -40,6 +62,7 @@ export default function Root() {
           <Route path={"/contact"} element={<Contact />} /> */}
         </Route>
       </Routes>
+      <React18V />
     </div>
   );
 }

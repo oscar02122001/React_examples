@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, NavItem } from "../style";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { navbar } from "../navbar";
 
 export default function Navbar() {
   // const history = useHistory();
+  const [path, setPath] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    setPath(location.pathname);
+  }, [location.pathname]);
+
   return (
     <div>
       <p className="titles">React router DOM-5 </p>
       <>
         <Container>
           {navbar.map((item) => {
-            return <NavItem to={item.path}>{item.name}</NavItem>;
+            return (
+              <NavItem active={path === item.path} to={item.path}>
+                {item.name}
+              </NavItem>
+            );
           })}
           {/* <NavItem to={"/home"}>Home</NavItem>
           <NavItem to={"/about"}>About</NavItem>

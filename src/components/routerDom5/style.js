@@ -10,9 +10,9 @@ justify-content: space-around;
 align-items: center;
 background-color: blue;
 color: #fff;
-.active{
+/* .active{
     color:red;
-}
+} */
 
 `
 
@@ -22,8 +22,7 @@ color: #fff;
 // }
 
 export const NavItem = styled(NavLink)
-`
-// color: ${(prop) =>{return prop.active ? 'red':"white"}};
+`color: ${({active})=> (active ? "red": 'white')} !important;
 text-decoration: none;
 color: #fff;
 `

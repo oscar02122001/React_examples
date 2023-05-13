@@ -40,10 +40,9 @@ export const navbar = [
     path: "/contact",
     element: <Contact />,
   },
-  // {
-  //   id: 6,
-  //   name: "404 not found",
-  //   path: "*",
-  //   element: <Home />,
-  // },
+  {
+    id: 6,
+    path: "*",
+    element: <Home />,
+  },
 ];

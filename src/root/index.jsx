@@ -7,6 +7,7 @@ import Index from "../components/useRef";
 import Slider from "../components/slider/slider";
 import Navbar from "../components/routerDom5/Navbar/index";
 import React18V from "../components/react 18v";
+import Fetch from "../components/fetchAPI";
 import { navbar } from "../components/routerDom5/navbar";
 import { Route, Routes } from "react-router-dom";
 import React from "react";
@@ -26,16 +27,20 @@ export default function Root() {
       <Render />
       <Index />
       <Slider />
+      <Fetch />
       {/* <Navbar /> */}
+         
 
       <Routes>
         <Route element={<Navbar />}>
-        {navbar.map((item) => {
-            return <Route path={item.path} element={item.element} />;
+          {navbar.map((item) => {
+            return (
+              <Route key={item.id} path={item.path} element={item.element} />
+            );
           })}
 
-        {/* <Route path={"/"} element={<Navigate to={"/home"} />}></Route> */}
-        {/* <Route
+          {/* <Route path={"/"} element={<Navigate to={"/home"} />}></Route> */}
+          {/* <Route
           path={"/home"}
           element={
             <React.Suspense fallback={<h1>Loading...</h1>}>
@@ -49,8 +54,8 @@ export default function Root() {
             <React.Suspense fallback={<h1>Loading...</h1>}>
               <About />
             </React.Suspense> */}
-          
-        {/* <Route path={"/service"} element={<Services />} />
+
+          {/* <Route path={"/service"} element={<Services />} />
           <Route
             path={"/locetion"}
             element={
@@ -62,7 +67,7 @@ export default function Root() {
           <Route path={"/contact"} element={<Contact />} /> */}
         </Route>
       </Routes>
-      <React18V />
+       <React18V />
     </div>
   );
 }

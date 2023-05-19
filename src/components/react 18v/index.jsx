@@ -1,5 +1,5 @@
 import React, { useState, useTransition } from "react";
-// import { flushSync } from "react-dom";
+import { flushSync } from "react-dom";
 
 const React18V = () => {
   ///🚩🚩🚩batching
@@ -23,7 +23,7 @@ const React18V = () => {
     //   setStatus((count + 1) % 2 === 0 ? "juft" : "toq");
     // });
   };
-
+ 
   const minus = () => {
     setCount(count - 1);
     setStatus((count + 1) % 2 === 0 ? "juft" : "toq");
@@ -35,7 +35,7 @@ const React18V = () => {
       data(value);
     });
   };
-
+//   console.log("re-render");
   ///🚩🚩🚩 useTransition
   const data = (value) => {
     let res = [];
@@ -56,11 +56,13 @@ const React18V = () => {
 
       {/*🚩🚩🚩 useTransition */}
       <input onChange={change} type="text" />
-      {isPanding
-        ? <h1>Loading...</h1>
-        : data1.map((value) => {
-            return <h1>{value}</h1>;
-          })}
+      {isPanding ? (
+        <h1>Loading...</h1>
+      ) : (
+        data1.map((value) => {
+          return <h1 key={1}>{value}</h1>;
+        })
+      )}
     </div>
   );
 };

@@ -12,6 +12,7 @@ export default function Navbar() {
   useEffect(() => {
     setPath(location.pathname);
   }, [location.pathname]);
+  
 
   return (
     <div>
@@ -20,9 +21,13 @@ export default function Navbar() {
         <Container>
           {navbar.map((item) => {
             return (
-              <NavItem active={path === item.path} to={item.path}>
+              <NavItem key={item.id} to={item.path}>
                 {item.name}
               </NavItem>
+
+              //  <NavItem key={item.id} active = {path === item.path} to={item.path}>
+              //   {item.name}
+              // </NavItem>
             );
           })}
           {/* <NavItem to={"/home"}>Home</NavItem>

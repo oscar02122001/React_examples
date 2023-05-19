@@ -5,7 +5,7 @@ import { CountContext } from "../../contexts/countapi";
 const Navbar = () => {
   const [users] = useContext(StudentContext);
   const [count] = useContext(CountContext);
-  console.log('sdcsdc');
+ 
   return (
     <div
       style={{

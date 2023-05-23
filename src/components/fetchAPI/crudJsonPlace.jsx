@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import users from "../../users";
+// import users from "../../users";
 
 const CrudJsonPlace = () => {
-  const find = useRef("");
+  const name = useRef("");
+  const web = useRef("");
   const [student, setStudent] = useState([]);
   const [data, setData] = useState([]);
   const [select, setSelect] = useState("id");
@@ -39,9 +40,20 @@ const CrudJsonPlace = () => {
       setInfo(res1);
     });
   };
-  //   const filter = ()=>{
-  //     let fil = student.filter(s => s.name.includes())
-  //   }
+
+  const addUser = () => {
+    let res = [
+      ...student,
+      {
+        id: student.length + 1,
+        name: name.current.value,
+        website: web.current.value,
+      },
+    ];
+    setStudent(res);
+    console.log(student);
+  };
+ 
   return (
     <div>
       <div>
@@ -53,6 +65,12 @@ const CrudJsonPlace = () => {
         <input onChange={search} type="text" placeholder="search" />
         <button onClick={search}>search</button>
         <button onClick={() => setStudent(data)}>Reload</button>
+        <div>
+          Name: <input ref={name} type="text" />
+          Website:
+          <input ref={web} type="text" />
+          <button onClick={addUser}>add</button>
+        </div>
       </div>
       <h1>JsonPlaceholder</h1>
       <div style={{ display: "flex" }}>

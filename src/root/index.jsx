@@ -12,6 +12,9 @@ import CrudJsonPlace from "../components/fetchAPI/crudJsonPlace";
 import { navbar } from "../components/routerDom5/navbar";
 import { Route, Routes } from "react-router-dom";
 import React from "react";
+import PostData from "../components/fetchAPI/postData";
+import GetData from "../components/fetchAPI/getData";
+import AddData from "../components/fetchAPI/addData";
 // const navbar = React.lazy(() => import("../components/routerDom5/navbar"));
 // import Home from "../components/routerDom5/Home";
 // import About from "../components/routerDom5/About";
@@ -30,6 +33,9 @@ export default function Root() {
       <Slider />
       <Fetch />
       <CrudJsonPlace />
+      <PostData />
+      <GetData />
+      <AddData />
       {/* <Navbar /> */}
 
       <Routes>

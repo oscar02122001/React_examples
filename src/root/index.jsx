@@ -8,6 +8,7 @@ import Slider from "../components/slider/slider";
 import Navbar from "../components/routerDom5/Navbar/index";
 import React18V from "../components/react 18v";
 import Fetch from "../components/fetchAPI";
+import CrudJsonPlace from "../components/fetchAPI/crudJsonPlace";
 import { navbar } from "../components/routerDom5/navbar";
 import { Route, Routes } from "react-router-dom";
 import React from "react";
@@ -28,8 +29,8 @@ export default function Root() {
       <Index />
       <Slider />
       <Fetch />
+      <CrudJsonPlace />
       {/* <Navbar /> */}
-         
 
       <Routes>
         <Route element={<Navbar />}>
@@ -67,7 +68,7 @@ export default function Root() {
           <Route path={"/contact"} element={<Contact />} /> */}
         </Route>
       </Routes>
-       <React18V />
+      <React18V />
     </div>
   );
 }

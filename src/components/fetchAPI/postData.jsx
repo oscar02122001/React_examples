@@ -23,7 +23,7 @@ const PostData = () => {
         email
         <input ref={emailRef} value={'olimjonismatov01@gmail.com'} type="text" />
       </span>
-      <span>
+      <span>  
         password
         <input ref={pwRef} value={'123456'} type="text" />
       </span>
